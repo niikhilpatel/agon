@@ -4,11 +4,11 @@ const Footer = () => {
     return (
         <footer className="bg-white">
             <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8">
-                <div className="lg:flex lg:items-center lg:justify-between">
-                    <div className="flex justify-center text-teal-600 sm:justify-start">
-                        <img className="h-16" src="https://www.alphawizz.com/img/newimg/AlphaWizz_black_logo.png" alt="AlphaWizz Logo"/>
+                <div className="lg:flex  lg:items-center lg:justify-between">
+                    <div className="flex items-center justify-center text-teal-600">
+                        <img className="h-16" src="https://www.alphawizz.com/img/newimg/AlphaWizz_black_logo.png" alt="AlphaWizz Logo" />
                     </div>
-                    <div className='flex gap-5'>
+                    <div className='flex gap-5 items-center justify-center'>
                         <p className="font-semifold md:text-2xl lg:mt-3 md:font-bold mt-4 max-w-md text-center leading-relaxed text-black-500 sm:text-left lg:mt-0">
                             Ready to get started?
                         </p>
@@ -16,12 +16,12 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="mt-16 grid grid-cols-1 gap-8 border-t border-gray-100 pt-16 md:grid-cols-4 lg:grid-cols-6">
+                <div className="mt-16 grid grid-cols-2 md:grid-cols-1 gap-8 border-t border-gray-100 pt-16 md:grid-cols-4 lg:grid-cols-6">
                     <div className="text-center sm:text-left md:col-span-4 lg:col-span-2">
                         <p className="lg:text-5xl text-lg font-medium text-gray-900">Let's talk?</p>
                         <div className="mx-auto mt-8 max-w-md sm:ms-0">
                             <p className="text-center leading-relaxed text-gray-500 ltr:sm:text-left rtl:sm:text-right">
-                            Leverage our experience and extensive expertise to create a solid development foundation for your business.
+                                Leverage our experience and extensive expertise to create a solid development foundation for your business.
                             </p>
                             {/* <form className="mt-4">
                                 <div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-start">
@@ -49,7 +49,7 @@ const Footer = () => {
                         <ul className="mt-8 space-y-4 text-sm">
                             <li>
                                 <a className="text-lg text-semibold text-gray-700 transition hover:text-gray-700/75" href="#">
-                                For HR Queries
+                                    For HR Queries
                                 </a>
                             </li>
 
@@ -59,7 +59,7 @@ const Footer = () => {
 
                             <li>
                                 <a className="text-lg text-semibold text-gray-700 transition hover:text-gray-700/75" href="#">For Other Queries
-                                    
+
                                 </a>
                             </li>
 
@@ -156,12 +156,12 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    
+
                 </div>
 
                 <div className="mt-16 border-t border-gray-100 pt-6 sm:flex sm:items-center sm:justify-between">
                     <p className="text-center text-2xl text-black-500 sm:text-left">
-                        Copyright &copy; Agon Official 2025.
+                        Copyright &copy; Alphawizz Official 2025.
                     </p>
 
                     <ul className="mt-4 flex justify-center gap-6 sm:mt-0 sm:justify-start">

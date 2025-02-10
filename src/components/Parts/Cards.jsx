@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const Cards = () => {
     return (
-        <div className='m-10 md:m-25'>
+        <div className='m-5 md:mx-25 md:mb-25'>
             <h1 className='text-4xl font-bold'>Our <span className='text-green-500'>services</span></h1>
             <div className=' grid md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-8 my-10'>
                 <div className='transition-all duration-700 hover:scale-105 border-white rounded-lg p-10 bg-green-100 flex flex-col items-start justify-between h-full shadow-xl '>
@@ -32,8 +32,8 @@ const Cards = () => {
                     <img src='https://www.alphawizz.com/img/newimg/digital.svg' className='' />
                     <h1 className='text-2xl font-bold'>Digital Marketing</h1>
                     <p>
-                           Let Alphawizz assemble a result-oriented, customized, and professional digital marketing service to boost your business profits. We dedicate sections such as SEO, SMO, PPC, and SMM to enhance your business's.
-                           </p>
+                        Let Alphawizz assemble a result-oriented, customized, and professional digital marketing service to boost your business profits. We dedicate sections such as SEO, SMO, PPC, and SMM to enhance your business's.
+                    </p>
                     <button className='border p-3 bg-white text-black rounded-4xl hover:bg-black hover:text-white flex item-center justify-between gap-2'>Learn More<FaArrowRight /></button>
                 </div>
                 <div className='transition-all duration-700 hover:scale-105 border-white rounded-lg p-10 bg-yellow-100 flex flex-col items-start justify-between h-full shadow-xl'>
@@ -46,8 +46,8 @@ const Cards = () => {
                     <img src='https://www.alphawizz.com/img/newimg/maintenance.svg' className='' />
                     <h1 className='text-2xl font-bold'>Maintenance & Support</h1>
                     <p>
-                           Trust our team of specialists for quality maintenance and support services for your software. We prioritize your projects and ensure the least amount of downtime possible. We offer support.
-                           </p>
+                        Trust our team of specialists for quality maintenance and support services for your software. We prioritize your projects and ensure the least amount of downtime possible. We offer support.
+                    </p>
                     <button className='border p-3 bg-white text-black rounded-4xl hover:bg-black hover:text-white flex item-center justify-between gap-2'>Learn More<FaArrowRight /></button>
                 </div>
 

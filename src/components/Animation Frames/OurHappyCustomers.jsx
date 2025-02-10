@@ -3,11 +3,14 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useState } from "react";
 
 const OurHappyCustomers = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section>
-      <div className="m-15 bg-[#FFF3EA] p-10 md:p-20 rounded-xl">
+      <div className="m-5 md:m-15 bg-[#FFF3EA] p-10 md:p-20 rounded-xl">
         <div className="md:flex justify-between items-center">
           <div className="my-2">
             <h1 className="text-4xl font-bold">Our Happy Customers</h1>
@@ -16,7 +19,6 @@ const OurHappyCustomers = () => {
             </p>
           </div>
 
-          {/* Custom Navigation Buttons */}
           <div className="flex gap-5">
             <div
               className="border rounded-full md:text-4xl p-3 bg-white cursor-pointer prev-button"
@@ -31,81 +33,79 @@ const OurHappyCustomers = () => {
           </div>
         </div>
 
-        {/* Swiper Slider for Testimonials */}
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
           slidesPerView={1}
+          centeredSlides={true}
+          loop={true}
           navigation={{
             prevEl: ".prev-button",
             nextEl: ".next-button",
           }}
-          loop={true} // Infinite loop
           breakpoints={{
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="my-10 md:my-20"
         >
-          <SwiperSlide>
-            <div className="border-6 border-purple-200 bg-white p-8 flex flex-col h-80 gap-5">
-              <img
-                src="https://agon-html-demo.vercel.app/demos/assets/imgs/page/homepage1/user-3.png"
-                className="border rounded-full h-15 w-15"
-              />
-              <div>
-                <h1 className="font-bold">Jenny Wilson</h1>
-                <p className="text-gray-600">Starbucks</p>
+          {customers.map((customer, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className={`transition-all duration-500 ease-in-out p-8 flex flex-col h-80 gap-5 rounded-lg shadow-md ${
+                  activeIndex === index
+                    ? "scale-100  bg-white border-6 border-sky-300 shadow-xl"
+                    : index === (activeIndex - 1 + customers.length) % customers.length
+                    ? "bg-white border-6 border-purple-300 scale-95 opacity-90"
+                    : "border-6 border-pink-300 scale-95 opacity-90"
+                }`}
+              >
+                <img
+                  src={customer.img}
+                  className="border rounded-full h-16 w-16"
+                  alt={customer.name}
+                />
+                <div>
+                  <h1 className="font-bold">{customer.name}</h1>
+                  <p className="text-gray-600">{customer.company}</p>
+                </div>
+                <p>{customer.review}</p>
               </div>
-              <p>Their blood is alcohol and it is very dangerous to drink it. It happens only at the age of 25.</p>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="border-6 border-sky-200 bg-white p-8 flex flex-col h-80 gap-5">
-              <img
-                src="https://agon-html-demo.vercel.app/demos/assets/imgs/page/homepage1/user-3.png"
-                className="border rounded-full h-15 w-15"
-              />
-              <div>
-                <h1 className="font-bold">Albert Flores</h1>
-                <p className="text-gray-600">Bank of America</p>
-              </div>
-              <p>So yes, the alcohol in hand sanitizers can be absorbed through the skin, but it would not cause intoxication.</p>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="border-6 border-pink-200 bg-white p-8 flex flex-col h-80 gap-5">
-              <img
-                src="https://agon-html-demo.vercel.app/demos/assets/imgs/page/homepage1/user-3.png"
-                className="border rounded-full h-15 w-15"
-              />
-              <div>
-                <h1 className="font-bold">Wade Warren</h1>
-                <p className="text-gray-600">Louis Vuitton</p>
-              </div>
-              <p>Even factoring differences in body weight between children and adults into account.</p>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="border-6 border-green-200 bg-white p-8 flex flex-col h-80 gap-5">
-              <img
-                src="https://agon-html-demo.vercel.app/demos/assets/imgs/page/homepage1/user-3.png"
-                className="border rounded-full h-15 w-15"
-              />
-              <div>
-                <h1 className="font-bold">Brooklyn Simmons</h1>
-                <p className="text-gray-600">Nintendo</p>
-              </div>
-              <p>So yes, the alcohol in hand sanitizers can be absorbed through the skin, but it would not cause intoxication.</p>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>
   );
 };
+
+// Testimonial Data
+const customers = [
+  {
+    name: "Jenny Wilson",
+    company: "Starbucks",
+    img: "https://agon-html-demo.vercel.app/demos/assets/imgs/page/homepage1/user-3.png",
+    review: "Their blood is alcohol and it is very dangerous to drink it.",
+  },
+  {
+    name: "Albert Flores",
+    company: "Bank of America",
+    img: "https://agon-html-demo.vercel.app/demos/assets/imgs/page/homepage1/user-3.png",
+    review: "The alcohol in hand sanitizers can be absorbed but won't intoxicate.",
+  },
+  {
+    name: "Wade Warren",
+    company: "Louis Vuitton",
+    img: "https://agon-html-demo.vercel.app/demos/assets/imgs/page/homepage1/user-3.png",
+    review: "Even factoring body weight, absorption is not dangerous.",
+  },
+  {
+    name: "Brooklyn Simmons",
+    company: "Nintendo",
+    img: "https://agon-html-demo.vercel.app/demos/assets/imgs/page/homepage1/user-3.png",
+    review: "The alcohol in sanitizers does not cause intoxication.",
+  },
+];
 
 export default OurHappyCustomers;
