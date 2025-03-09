@@ -13,8 +13,8 @@ const Navbar = () => {
         {/* Logo */}
         <div>
           <img
-            className="h-16"
-            src="https://www.alphawizz.com/img/newimg/AlphaWizz_black_logo.png"
+            className="h-16 bg-black"
+            src="https://www.alphawizz.com/images/logo.svg"
             alt="AlphaWizz Logo"
           />
         </div>
